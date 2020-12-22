@@ -5,33 +5,15 @@ const http = require('http');
 
 const app = express();
 let server = http.createServer(app);
-let io = socketIO(server);
 
 const rutaPublic = path.resolve(__dirname, '../public');
 const puerto = process.env.PORT || 3000;
 
 app.use(express.static(rutaPublic));
 
-io.on('connection', (client) => {
-    client.broadcast.emit('usuarioConectado', {
-        message: 'Un usuario se conectó a la sala'
-    });
+module.exports.io = socketIO(server);
 
-    client.on('enviarMensaje', (data, callback) => {
-        //Emitir mensaje
-        client.broadcast.emit('nuevoMensaje', data);
-
-        callback({
-            ok: true
-        });
-    });
-
-    client.on('disconnect', () => {
-        client.broadcast.emit('usuarioDesconectado', {
-            message: 'Un usuario se desconectó de la sala'
-        });
-    });
-});
+require('./sockets/socket');
 
 server.listen(puerto, (err) => {
     if (err) throw err;
