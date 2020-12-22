@@ -49,11 +49,11 @@
         });
 
         socket.on('usuarioDesconectado', function(data) {
-            console.log(data.message);
+            alert(data.message);
         });
 
         socket.on('usuarioConectado', function(data) {
-            console.log(data.message);
+            alert(data.message);
         })
 
         $("#btnenviar").click(function() {
