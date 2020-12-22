@@ -1,15 +1,16 @@
 {
-  "name": "08-socket-io-test",
-  "version": "1.0.0",
-  "description": "Esta es mi tarea de fundamentos de sockets",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Juan Aldair",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^3.0.4"
-  }
+    "name": "08-socket-io-test",
+    "version": "1.0.0",
+    "description": "Esta es mi tarea de fundamentos de sockets",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Juan Aldair",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^3.0.4"
+    }
 }
